@@ -16,8 +16,8 @@ class Company(models.Model):
         max_length=30, choices=CompanyStatus.choices, default=CompanyStatus.HIRING
     )
     last_update = models.DateTimeField(default=now, editable=True)
-    aplication_link = models.URLField(blank=True)
+    application_link = models.URLField(blank=True)
     notes = models.CharField(max_length=100, blank=True)
 
-    def __str__(self):
-        return self.name
+    def __str__(self)->str:
+        return f"{self.name}"
